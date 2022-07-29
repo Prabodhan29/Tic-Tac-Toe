@@ -4,17 +4,14 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class Grid implements IGameObject {
-	
-	private ArrayList<Placement> placements = new ArrayList<Placement>(Main.SIZE);
-	private Marker[][] markers;
-	
+	private final ArrayList<Placement> placements = new ArrayList<Placement>(Main.SIZE);
+	private final Marker[][] markers;
 	private int gridThickness = 16;
 	private int markerIndex = 0;
 	private boolean gameEnd = false;
 	private int winType = -1;
 	
 	public Grid() {
-		
 		markers = new Marker[Main.ROWS][Main.ROWS];
 		
 		for (int i = 0; i < Main.SIZE; i++) {
@@ -24,7 +21,6 @@ public class Grid implements IGameObject {
 			
 			placements.add(new Placement(xIndex * size, yIndex * size, xIndex, yIndex, size, size));
 		}
-		
 		reset();
 	}
 
@@ -38,7 +34,6 @@ public class Grid implements IGameObject {
 				if(markers[x][y] == null) {
 					continue;
 				}
-				
 				markers[x][y].update(deltaTime);
 			}
 		}
@@ -46,7 +41,6 @@ public class Grid implements IGameObject {
 
 	@Override
 	public void render(Graphics2D graphicsRender) {
-
 		for (Placement placement : placements) {
 			placement.render(graphicsRender);
 		}
@@ -56,13 +50,10 @@ public class Grid implements IGameObject {
 				if(markers[x][y] == null) {
 					continue;
 				}
-				
 				markers[x][y].render(graphicsRender);
 			}
 		}
-		
 		renderGrid(graphicsRender);
-		
 	}
 
 	private void renderGrid(Graphics2D graphicsRender) {
@@ -96,9 +87,7 @@ public class Grid implements IGameObject {
 			// won!
 			graphicsRender.drawString((winType == 0 ? "X" : "O") + " has won!",  175, 235);
 		}
-
 		graphicsRender.drawString("Press anywhere to restart! :)",  85, 260);
-		
 	}
 
 	public void mouseMoved(MouseEvent e) {
@@ -129,7 +118,6 @@ public class Grid implements IGameObject {
 
 	private void placeMarker(int x, int y) {
 		markers[x][y] = new Marker(x, y, markerIndex);
-		
 		markerIndex ++;
 		
 		ArrayList<Marker> winLine = Checker.checkWin(markers);
@@ -150,7 +138,6 @@ public class Grid implements IGameObject {
 				markers[x][y] = null;
 			}
 		}
-		
 
 		for (Placement placement : placements) {
 			placement.set(false);

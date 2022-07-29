@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 
 public class Minimax {
-
 	private int bestMove = 0;
-	
 	private int counter = 0;
-	
+
 	public int getBestMove(Marker[][] markers, int requester) {
 		bestMove = 0;
 		counter = 0;
@@ -77,7 +75,6 @@ public class Minimax {
 				max = scores.get(i);
 			}
 		}
-		
 		return index;
 	}
 	
@@ -90,7 +87,6 @@ public class Minimax {
 				min = scores.get(i);
 			}
 		}
-		
 		return index;
 	}
 
@@ -118,7 +114,6 @@ public class Minimax {
 				}
 			}
 		}
-		
 		return openSpots;
 	}
 
@@ -133,5 +128,4 @@ public class Minimax {
 		}
 		return result;
 	}
-	
 }

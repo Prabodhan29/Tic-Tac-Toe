@@ -1,10 +1,8 @@
 import java.awt.Graphics2D;
 
 public class AI implements IGameObject {
-
-	private Minimax minimax;
-	private Grid grid;
-	
+	private final Minimax minimax;
+	private final Grid grid;
 	private int timeInterval = 20;
 	private int currentTime;
 	private boolean startTimer;
@@ -34,11 +32,9 @@ public class AI implements IGameObject {
 
 	@Override
 	public void render(Graphics2D graphicsRender) {
-		
 	}
 	
 	public boolean isMoving() {
 		return startTimer;
 	}
-
 }

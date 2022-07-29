@@ -1,20 +1,14 @@
 import java.awt.Color;
 import java.awt.Graphics2D;
-
 public class Placement implements IGameObject {
-
-	private Color hoverColor = new Color(0xa0a0a0);
-	
+	private Color hoverColor = new Color(0x7F7C82);
 	private boolean fadeIn = false;
 	private boolean markerPlaced = false;
-	
 	private float alpha = 0f;
 	private float fadeSpeed = 0.1f;
-	
 	private int x;
 	private int y;
 	private int xIndex;
-
 	private int yIndex;
 	private int width;
 	private int height;
@@ -41,7 +35,6 @@ public class Placement implements IGameObject {
 				alpha = 0;
 			}
 		}
-		
 	}
 
 	@Override
@@ -52,7 +45,6 @@ public class Placement implements IGameObject {
 				(int)(alpha * 225)));
 		
 		graphicsRender.fillRect(x, y, width, height);
-		
 		graphicsRender.setColor(Color.white);
 	}
 	

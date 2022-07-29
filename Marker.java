@@ -2,17 +2,13 @@ import java.awt.AlphaComposite;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
 
 public class Marker implements IGameObject {
-	
 	private BufferedImage marker;
-	
 	private int x;
 	private int y;
 	private int type;
-	
 	private boolean won = false;
 	private float alpha = 1;
 	private float fadeSpeed = 0.05f;
@@ -25,17 +21,16 @@ public class Marker implements IGameObject {
 		String markerType = this.type == 0 ? "x" : "o";
 		
 		try {
+			// X and O images
 			marker = ImageIO.read(new File("assets/" + markerType + ".png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 
 	public Marker(int type) {
 		this.type = type % 2;
 	}
-
 
 	@Override
 	public void update(float deltaTime) {
@@ -44,20 +39,16 @@ public class Marker implements IGameObject {
 			if(alpha >= 1) {
 				alpha = 1;
 				fadeSpeed *= -1;
-				
-				return;
-			} else if(alpha <= 0.5f) {
+			}
+			else if(alpha <= 0.5f) {
 				alpha = 0.5f;
 				fadeSpeed *= -1;
-				
-				return;
 			}
 		}
 	}
 
 	@Override
 	public void render(Graphics2D graphicsRender) {
-		
 		AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);
 		graphicsRender.setComposite(ac);
 		
@@ -68,7 +59,6 @@ public class Marker implements IGameObject {
 		graphicsRender.setComposite(ac);
 	}
 
-
 	public int getType() {
 		return type;
 	}
@@ -76,5 +66,4 @@ public class Marker implements IGameObject {
 	public void setWon(boolean won) {
 		this.won = won;
 	}
-
 }

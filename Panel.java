@@ -4,7 +4,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-
 import javax.swing.JPanel;
 
 public class Panel extends JPanel implements Runnable{
@@ -18,7 +17,7 @@ public class Panel extends JPanel implements Runnable{
 	// everything to this image
 	private Image img;
 	
-	// background color as base background so it's not only white
+	// background color as base background, so it's not only white
 	private Color backgroundColor;
 	
 	public Panel(Color color) {

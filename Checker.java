@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Checker {
-
 	public static ArrayList<Marker> checkWin(Marker[][] markers){
 		ArrayList<Marker> match;
 		
@@ -31,7 +30,6 @@ public class Checker {
 				return match;
 			}
 		}
-		
 		return null;
 	}
 	
@@ -59,8 +57,7 @@ public class Checker {
 				match.clear();
 				type = -1;
 			}
-			
-			
+
 			x += dX;
 			y += dY;
 			index ++;
@@ -74,5 +71,4 @@ public class Checker {
 
 		return match == null ? -1 : match.get(0).getType();
 	}
-	
 }
