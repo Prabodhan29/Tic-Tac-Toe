@@ -3,7 +3,7 @@ import java.awt.Graphics2D;
 public class AI implements IGameObject {
 	private final Minimax minimax;
 	private final Grid grid;
-	private int timeInterval = 20;
+	private int timeInterval = 20; //
 	private int currentTime;
 	private boolean startTimer;
 	

@@ -23,7 +23,6 @@ public class Grid implements IGameObject {
 		}
 		reset();
 	}
-
 	@Override
 	public void update(float deltaTime) {
 		for (Placement placement : placements) {

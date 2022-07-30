@@ -31,7 +31,6 @@ public class Panel extends JPanel implements Runnable{
 	@Override
 	public void addNotify() {
 		super.addNotify();
-		
 		if(thread == null){
 			thread = new Thread(this);
 			thread.start();

@@ -36,7 +36,6 @@ public class Placement implements IGameObject {
 			}
 		}
 	}
-
 	@Override
 	public void render(Graphics2D graphicsRender) {
 		graphicsRender.setColor(new Color(hoverColor.getRed(), 

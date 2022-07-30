@@ -46,7 +46,6 @@ public class Marker implements IGameObject {
 			}
 		}
 	}
-
 	@Override
 	public void render(Graphics2D graphicsRender) {
 		AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);

@@ -68,7 +68,6 @@ public class Checker {
 
 	public static int getWinType(Marker[][] markers) {
 		ArrayList<Marker> match = checkWin(markers);
-
 		return match == null ? -1 : match.get(0).getType();
 	}
 }

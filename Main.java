@@ -6,7 +6,7 @@ public class Main {
 	public static int HEIGHT = 500; // screen height
 	public static int ROWS = 3; // no. of rows
 	public static int MATCH = 3;
-	public static int SIZE = ROWS * ROWS;
+	public static int SIZE = ROWS * ROWS; // size of the grid
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Tic-Tac-Toe");

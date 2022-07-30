@@ -95,7 +95,6 @@ public class Minimax {
 		if(match == null) {
 			return 0;
 		}
-		
 		if(match.get(0).getType() == requester) {
 			return Main.SIZE - depth;
 		}
